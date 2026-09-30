@@ -33,12 +33,12 @@ sample = [
 
 
 def to_int(text):
-    """The cell as an int. An empty cell (only whitespace) becomes 0. Negative numbers stay negative.
+    r"""The cell as an int. An empty cell (only whitespace) becomes 0. Negative numbers stay negative.
 
-    to_int(teams[0]["wins"])       ->  44
-    to_int(teams[6]["diff"])       ->  -118
-    to_int(teams[0]["ot_losses"])  ->  0        (an empty cell)
-    to_int("   7   ")              ->  7
+    to_int("\n        44\n      ")    ->  44
+    to_int("\n        -118\n      ")  ->  -118
+    to_int("\n        \n      ")      ->  0        (an empty cell)
+    to_int("   7   ")                 ->  7
     """
     pass
 
@@ -99,10 +99,10 @@ def teams_named(rows, word):
 
 def main():
     # Run `python src/hockey.py` and compare each line to the examples in the docstrings.
-    print('to_int(teams[0]["wins"])       -> ', to_int(teams[0]["wins"]))
-    print('to_int(teams[6]["diff"])       -> ', to_int(teams[6]["diff"]))
-    print('to_int(teams[0]["ot_losses"])  -> ', to_int(teams[0]["ot_losses"]))
-    print('to_int("   7   ")              -> ', to_int("   7   "))
+    print(r'to_int("\n        44\n      ")    -> ', to_int("\n        44\n      "))
+    print(r'to_int("\n        -118\n      ")  -> ', to_int("\n        -118\n      "))
+    print(r'to_int("\n        \n      ")      -> ', to_int("\n        \n      "))
+    print('to_int("   7   ")                 -> ', to_int("   7   "))
     print('season(sample, 2001)           -> ', season(sample, 2001))
     print('season(sample, 1999)           -> ', season(sample, 1999))
     print('total_ot_losses(sample, 2000)  -> ', total_ot_losses(sample, 2000))
