@@ -55,11 +55,13 @@ def clean(teams):
     pass
 
 
-def season(rows, year):
-    """The rows from that year, in order.
+def season(teams, year):
+    """Every team's record from that year's season, in the same order they appear in teams.
+    Each dictionary is one team's record for one season.
 
-    season(sample, 2001)  ->  [sample[2]]    (the 2001 Ottawa Senators row)
-    season(sample, 1999)  ->  []
+    season(sample, 2001)  ->  [{'name': 'Ottawa Senators', 'year': 2001, 'wins': 30, 'losses': 45, 'ot_losses': 4,
+                                'pct': 0.4, 'gf': 170, 'ga': 182, 'diff': -12}]
+    season(sample, 1999)  ->  []    (no teams played in 1999 in this list)
     """
     pass
 
