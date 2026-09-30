@@ -44,10 +44,13 @@ def to_int(text):
 
 
 def clean(teams):
-    """Row in, row out: a new list of dicts. "name" is a clean string, "pct" is a float, every other value is an int.
+    r"""Row in, row out: a new list of dicts. "name" is a clean string, "pct" is a float, every other value is an int.
 
-    clean(teams)[0]  ->  {'name': 'Boston Bruins', 'year': 1990, 'wins': 44, 'losses': 24, 'ot_losses': 0,
-                          'pct': 0.55, 'gf': 299, 'ga': 264, 'diff': 35}
+    clean([{"name": "\n    Boston Bruins\n  ", "year": "\n    1990\n  ", "wins": "\n    44\n  ",
+            "losses": "\n    24\n  ", "ot_losses": "\n    \n  ", "pct": "\n    0.55\n  ",
+            "gf": "\n    299\n  ", "ga": "\n    264\n  ", "diff": "\n    35\n  "}])
+        ->  [{'name': 'Boston Bruins', 'year': 1990, 'wins': 44, 'losses': 24, 'ot_losses': 0,
+              'pct': 0.55, 'gf': 299, 'ga': 264, 'diff': 35}]
     """
     pass
 
